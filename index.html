@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="login-wrapper">
+        <div class="notifications" id="notifications">
+            <div class="notif-card">
+                <div class="notif-header">
+                    <div class="notif-title">Welcome</div>
+                    <button class="notif-close" id="notifClose">×</button>
+                </div>
+                <div class="notif-body">
+                    <div id="notifMessage">Welcome, Rohan</div>
+                    <div class="notif-subtitle">Have a great session</div>
+                </div>
+            </div>
+            <div class="notif-footer">Chrome Notifications</div>
+        </div>
+        <div class="login-container" id="loginContainer">
+            <div class="user-profile">
+                <img src="./avatar.png" alt="User" class="user-avatar" id="currentAvatar">
+                <h2 class="user-name" id="currentName">Rohan</h2>
+                <div class="login-status" id="loginStatus">Locked</div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="PIN" class="password-input">
+                <a href="login.html" class="submit-btn"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="signin-options">
+                <p>Sign-in options</p>
+                <div class="option-buttons">
+                    <button class="option-btn selected"><i class="fa-solid fa-key"></i></button>
+                    <button class="option-btn"><i class="fa-solid fa-fingerprint"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-list">
+            <div class="user-item active" onclick="selectUser('Rohan', './frog.jpg')">
+                <img src="./avatar.png" alt="Rohan">
+                <span>Rohan</span>
+            </div>
+            <div class="user-item" onclick="selectUser('Administrator', './snowflakes.jpg')">
+                <img src="./snowflakes.jpg" alt="Admin">
+                <span>Administrator</span>
+            </div>
+            <div class="user-item" onclick="selectUser('Guest', './download.jpg')">
+                <img src="./download.jpg" alt="Guest">
+                <span>Guest</span>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <div class="action-btn" title="Internet">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div class="action-btn" title="Accessibility">
+                <i class="fa-brands fa-accessible-icon"></i>
+            </div>
+            <div class="action-btn" title="Power">
+                <i class="fa-solid fa-power-off"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var panel = document.getElementById('notifications');
+            var closeBtn = document.getElementById('notifClose');
+            panel.style.display = 'block';
+            closeBtn.addEventListener('click', function () {
+                panel.style.display = 'none';
+            });
+        });
+
+        function updateWelcome(name) {
+            var msg = document.getElementById('notifMessage');
+            var panel = document.getElementById('notifications');
+            if (msg) msg.innerText = 'Welcome, ' + name;
+            if (panel && panel.style.display === 'none') {
+                panel.style.display = 'block';
+            }
+        }
+
+        function selectUser(name, imageSrc) {
+            document.getElementById('currentName').innerText = name;
+            document.getElementById('currentAvatar').src = imageSrc;
+            updateWelcome(name);
+            
+            // Update active state in list
+            document.querySelectorAll('.user-item').forEach(item => {
+                item.classList.remove('active');
+                if(item.querySelector('span').innerText === name) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

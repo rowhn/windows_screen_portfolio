@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background: #fff;
+        }
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 16px;
+            align-items: start;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .contacts {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .college {
+            grid-column: 1 / -1;
+            font-size: 14px;
+            margin-top: 8px;
+            color: #444;
+        }
+        .section {
+            margin-top: 18px;
+        }
+        .section-title {
+            font-weight: 700;
+            color: #0078d7;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .meta {
+            color: #666;
+            font-size: 13px;
+            text-align: right;
+        }
+        .item {
+            margin-bottom: 12px;
+        }
+        .item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .stack {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 14px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .list {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="header">
+            <div class="name">Rohan Dohe</div>
+            <div class="contacts">
+                rohandohe5427@gmail.com<br>
+                GitHub Profile<br>
+                LinkedIn Profile<br>
+                Roll No.: BT210048IT
+            </div>
+            <div class="college">
+                Bachelor of Technology • J D College of Engineering and Management, Nagpur
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <div class="section-title">Education</div>
+                <div class="meta">2021-25</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Bachelor of Technology in Information Technology</div>
+                <div class="stack">J D College of Engineering and Management, Nagpur • CGPA: 6.96</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects</div>
+
+            <div class="item">
+                <div class="item-title">Raspberry-Pi Vision – Assistive Device for the Blind</div>
+                <div class="stack">Stack: Python, Raspberry Pi, OpenCV, Ultrasonic Sensors, Text-to-Speech</div>
+                <ul>
+                    <li>Built an AI-powered device using Raspberry Pi, ultrasonic sensors, and OpenCV.</li>
+                    <li>Developed obstacle and object detection functionality using Python.</li>
+                    <li>Integrated Text-to-Speech to provide real-time voice feedback to the user.</li>
+                    <li>Designed to be portable, cost-effective, and easy to operate for the visually impaired.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">E-Commerce Website – Lux</div>
+                <div class="stack">Stack: MongoDB, Express.js, React.js, Node.js (MERN)</div>
+                <ul>
+                    <li>Developed a full-featured e-commerce platform for footwear sales.</li>
+                    <li>Implemented user authentication, product catalog, and cart management.</li>
+                    <li>Enabled secure CRUD operations for admin (add/edit/remove products).</li>
+                    <li>Integrated MongoDB for storing user & product data efficiently.</li>
+                    <li>Created responsive UI using React.js for smooth user experience.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">To-Do List Web App</div>
+                <div class="stack">Stack: HTML, CSS, JavaScript, Local Storage</div>
+                <ul>
+                    <li>Developed a responsive To-Do List app with a modern glass UI using pure HTML, CSS, and JS.</li>
+                    <li>Implemented task creation, completion toggle, and deletion features with smooth UI interactions.</li>
+                    <li>Enabled local storage to persist tasks even after browser reloads.</li>
+                    <li>Designed a mobile-friendly layout with animations and hover effects.</li>
+                    <li>Focused on clean and minimalist design for better usability and engagement.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <div class="section-title">Experience</div>
+                <div class="meta">Jan – July 2025</div>
+            </div>
+            <div class="item">
+                <div class="item-title">MERN Stack Developer – Wide Softech Pvt. Ltd, Nagpur | Intern</div>
+                <ul>
+                    <li>Collaborated with frontend and backend teams to implement and optimize features.</li>
+                    <li>Contributed to responsive UI design using Tailwind CSS.</li>
+                    <li>Participated in code reviews and version control using GitHub.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section grid-2">
+            <div>
+                <div class="section-title">Skills</div>
+                <div class="list">
+                    Languages: HTML, CSS, JavaScript, Python, C<br>
+                    Frameworks/Libraries: React.js, Node.js, Express.js, Tailwind CSS<br>
+                    Databases: MongoDB<br>
+                    Tools: GitHub, Visual Studio Code
+                </div>
+            </div>
+            <div>
+                <div class="section-title">Certifications</div>
+                <ul>
+                    <li>Crash Course on Python – Coursera (2024)</li>
+                    <li>Foundations of Web Development: CSS, Bootstrap, JS, React – Udemy</li>
+                    <li>AI-ML Virtual Internship – Eduskills/AICTE by Google Developers (2024)</li>
+                    <li>Python 3.4.3 – JD College of Engineering (2024)</li>
+                    <li>Paper Presentation: "Arduino Based Human Third Eye" – International Conference 2024</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

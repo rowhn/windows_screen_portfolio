@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Desktop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="desktop">
+        <div class="icons">
+            <div class="icon" data-app="resume">
+                <i class="fa-solid fa-folder fa-2xl" style="color: #dfb620;"></i>
+                <p>Resume</p>
+            </div>
+            <div class="icon" data-app="about">
+                <i class="fa-solid fa-folder fa-2xl" style="color: #dfb620;"></i>
+                <p>About Me</p>
+            </div>
+            <div class="icon" data-app="skills">
+                <i class="fa-solid fa-folder fa-2xl" style="color: #dfb620;"></i>
+                <p>Skills</p>
+            </div>
+            <div class="icon" data-app="projects">
+                <i class="fa-solid fa-folder fa-2xl" style="color: #dfb620;"></i>
+                <p>Projects</p>
+            </div>
+            <div class="icon" data-app="paint">
+                <i class="fa-solid fa-paintbrush fa-2xl" style="color: #2a41eb;"></i>
+                <p>Paint</p>
+            </div>
+        </div>
+
+        <div class="win7-taskbar">
+            <div class="task start" onclick="toggleStartMenu()">
+                <img src="./start.png">
+            </div>
+
+            <div class="task" onclick="openWindow('explorer', {title: 'File Explorer', content: '<h3>Files</h3><p>C:/Users/Rohan/Documents</p>'})">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            
+            <div class="task" onclick="openWindow('browser', {title: 'Google Chrome', content: '<iframe src=\'https://www.google.com/webhp?igu=1\' style=\'width:100%;height:100%;border:none;\'></iframe>'})">
+                <i class="fa-brands fa-chrome"></i>
+            </div>
+
+            <div class="task" onclick="openWindow('code', {title: 'VS Code', content: '<h3>Visual Studio Code</h3><p>Simulated environment...</p>'})">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div class="task" onclick="openWindow('ppt', {title: 'PowerPoint', content: '<iframe src=\'https://onedrive.live.com/embed?resid=YOUR_PPT_ID&authkey=YOUR_AUTH_KEY&em=2\' width=\'100%\' height=\'100%\' frameborder=\'0\'></iframe>'})">
+                <i class="fa-solid fa-file-powerpoint"></i>
+            </div>
+        </div>
+
+        <div id="start-menu" class="start-menu">
+            <div class="start-menu-left">
+                <div class="start-item" onclick="openWindow('resume', desktopData.resume)">
+                    <i class="fa-solid fa-file-lines" style="color: #2b5797;"></i>
+                    <span>Resume</span>
+                </div>
+                <div class="start-item" onclick="openWindow('projects', desktopData.projects)">
+                    <i class="fa-solid fa-briefcase" style="color: #b91d47;"></i>
+                    <span>Projects</span>
+                </div>
+                <div class="start-item" onclick="openWindow('paint', {title: 'Paint', content: '<iframe src=\'https://viliusle.github.io/miniPaint/\' style=\'width:100%;height:100%;border:none;\'></iframe>'})">
+                    <i class="fa-solid fa-paintbrush" style="color: #00a4ef;"></i>
+                    <span>Paint</span>
+                </div>
+                <div class="start-item" onclick="openWindow('browser', {title: 'Google Chrome', content: '<iframe src=\'https://www.google.com/webhp?igu=1\' style=\'width:100%;height:100%;border:none;\'></iframe>'})">
+                    <i class="fa-brands fa-chrome" style="color: #ea4335;"></i>
+                    <span>Google Chrome</span>
+                </div>
+            </div>
+            <div class="start-menu-right">
+                <div class="user-profile">
+                    <img src="./avatar logo.png" alt="User">
+                    <span>Rohan</span>
+                </div>
+                <div class="system-options">
+                    <div class="start-item">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="start-item" onclick="window.location.href='index.html'">
+                        <i class="fa-solid fa-power-off"></i>
+                        <span>Log Off</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById('welcomeModal');
+            var ok = document.getElementById('welcomeOk');
+            modal.style.display = 'flex';
+            ok.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
